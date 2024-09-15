@@ -229,11 +229,13 @@ main > form > button {
 
 .hourly-data > p {
     height: 100%;
-    font-size: clamp(0.2rem, 3vw ,0.9rem);
+    font-size: clamp(0.2rem, 3vw , 1.5rem);
     display: flex;
+    justify-content: center;
     align-items: center;
     border-left: none;
     border-radius: 0 5px 5px 0;
+    font-weight: bold;
 }
 
 .title-cast, .title-hourly {
