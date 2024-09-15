@@ -135,6 +135,7 @@ main > form > button {
 }
 
 .temps {
+    font-weight: bold;
     margin: 0.5rem;
     flex: 1;
     display: grid;
