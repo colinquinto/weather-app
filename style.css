@@ -209,7 +209,7 @@ main > form > button {
 .hourly-data {
     width: 100%;
     display: grid;
-    grid-template: 1fr / repeat(4, 1fr);
+    grid-template: repeat(12, 1fr) / repeat(4, 1fr);
     row-gap: 1rem;
     margin-bottom: 1rem;
 }
