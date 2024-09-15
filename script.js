@@ -170,3 +170,36 @@ const displayData = (container, weatherData, gif) => {
         hourlyDiv
     );
 }
+
+const convertEvent = () => {
+    const celBtn = document.querySelector('.toC');
+    const farBtn = document.querySelector('.toF');
+
+    celBtn.addEventListener('click', () => {
+        let current = document.querySelector('.currentTemp').textContent;
+        let min = document.querySelector('.minTemp').textContent;
+        let max = document.querySelector('.maxTemp').textContent;
+        current = Number((current.slice(0, -2) - 32) * 5 / 9).toFixed(1);
+        min = Number((min.slice(4, -2) - 32) * 5 / 9).toFixed(1);
+        max = Number((max.slice(4, -2) - 32) * 5 / 9).toFixed(1); 
+        celBtn.style.pointerEvents = 'none';
+        farBtn.style.pointerEvents = '';
+        document.querySelector('.currentTemp').textContent = current + '°C';
+        document.querySelector('.minTemp').textContent = 'Min: ' +  min + '°C';
+        document.querySelector('.maxTemp').textContent = 'Max: ' +  max + '°C';
+     })
+
+     farBtn.addEventListener('click', () => {
+        let current = document.querySelector('.currentTemp').textContent;
+        let min = document.querySelector('.minTemp').textContent;
+        let max = document.querySelector('.maxTemp').textContent;
+        current = Number((current.slice(0, -2) * 9 / 5) + 32).toFixed(1);
+        min = Number((min.slice(4, -2) * 9 / 5) + 32).toFixed(1);
+        max = Number((max.slice(4, -2) * 9 / 5) + 32).toFixed(1);
+        celBtn.style.pointerEvents = '';
+        farBtn.style.pointerEvents = 'none';
+        document.querySelector('.currentTemp').textContent = current + '°F';
+        document.querySelector('.minTemp').textContent = 'Min: ' + min + '°F';
+        document.querySelector('.maxTemp').textContent = 'Max: ' + max + '°F';
+     })
+}
